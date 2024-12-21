@@ -207,3 +207,133 @@ print("合計...", my_sum)
 # 演習問題3
 for x in range(5):
     print("ohayou")
+
+# 関数をつくってみる
+mylist = [1, 2, 3, 4, 5]
+sum_val = sum(mylist)
+print(sum_val)
+
+# 2数を返す関数もある
+# 戻り値をそれぞれ格納
+q, m = divmod(16, 3)
+print(m, q)
+
+# 演習問題
+my_list = [1, 3, 5, 7, 9]
+x = len(my_list)
+print(x)
+
+# 関数をつくってみる
+def add2numbers(x, y):
+    Z = x + y
+    return Z
+
+ans = add2numbers(2, 4)
+print(ans)
+
+def add2numbers(x, y):
+    z = x + y
+    print(z)
+
+add2numbers(2, 3)
+
+# 演習
+def add3numbers(x, y, z):
+    w = x + y + z
+    print(w)
+
+add3numbers(12, 4, 4)
+add3numbers(300, 4, 21)
+add3numbers(2, 14, 67)
+
+# 演習2
+def mysum(numberlist):
+    sum_val = 0
+    for x in numberlist:
+        sum_val = sum_val + x
+    return sum_val
+
+num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ans = mysum(num1)
+print(ans)
+
+def mysum(numberlist):
+    sum_val = 0
+    for x in numberlist:
+        sum_val = sum_val + x
+        print(sum_val)
+    return sum_val
+
+num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+ans = mysum(num1)
+print(ans)
+
+sum_val = 0
+for x in num1:
+    sum_val = sum_val + x
+    print(sum_val)
+
+# メソッドを使ってみよう
+# メソッドとは、変数がもつ機能の一種で、変数.メソッド（引数)
+
+# replaceメソッドは文字列型変数に
+text1 = "aaa bbb abc"
+text2 = text1.replace("aaa", "XXX") # 文字列の一部を置換
+print(text2) # "XXX bbb abc"
+
+# text2に置き換えなないと変わらない
+text1 = "aaa bbb abc"
+text1.replace("aaa", "XXX") # 文字列の一部を置換
+print(text1) # "aaa bbb abc"
+
+# appendメソッドはlist型変数に
+list1 = [1, 2, 3]
+list1.append(4)
+print(list1) # [1, 2, 3, 4]
+
+list1.append([5, 6, 7])
+print(list1) # [1, 2, 3, [5, 6, 7]]
+
+# 演習問題1
+list1 = "XYY XYY XYZ"
+list2 = list1.replace("X", "Y")
+print(list2)
+
+# 演習2
+list3 = "MY PYTHON"
+list3.lower() # 'my python'
+
+# モジュール
+# mathモジュール
+import math
+print(math.pi)
+
+from math import pi
+print(pi)
+
+x = math.pi / 2
+y = math.sin(x)
+print(y)
+
+# 演習1
+import math
+print(math.e)
+
+# 演習2
+r = 3
+R = 2 * r
+C = R * math.pi
+print(C) # 半径3cmの円の円周
+
+S = r * r * math.pi
+print(S) # 面積
+
+# GUI（Glaphic User Interface)
+# GUIを作成するtkinterモジュール
+import tkinter as tk
+
+root = tk.Tk() # ウィンドウを構成するオブジェクトが生成される
+my_label = tk.Label(text="Tkinter Sample") # ラベルを表示
+my_label.pack()
+root.mainloop()
+
