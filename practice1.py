@@ -337,3 +337,79 @@ my_label = tk.Label(text="Tkinter Sample") # ラベルを表示
 my_label.pack()
 root.mainloop()
 
+# BMI計算ツールをつくてみよう
+import tkinter as tk
+
+root = tk.Tk()
+root.title("BMI計算ツール")
+root.geometry("250x140") # ウィンドウのサイズ
+# 体重入力欄
+weight_label = tk.Label(text = "体重")
+weight_label.pack()
+weight_entry = tk.Entry(justify = "right") # 入力欄
+weight_entry.pack()
+# 身長入力欄
+height_label = tk.Label(text = "身長")
+height_label.pack()
+height_entry = tk.Entry(justify = "right")
+height_entry.pack()
+# 計算結果
+bmi_label = tk.Label(text = "BMI計算結果")
+bmi_label.pack()
+bmi_result = tk.StringVar()
+bmi_label = tk.Label(text = "", textvariable = bmi_result)
+bmi_label.pack()
+
+def calc_bmi():
+    """BMI計算"""
+    weight = int(weight_entry.get())
+    height = int(height_entry.get())/100
+    bmi = weight / (height * height)
+
+    global bmi_result
+    bmi_result.set(str(bmi))
+
+# 計算ボタン
+button = tk.Button(text = "計算", command = calc_bmi)
+button.pack()
+# メインloop開始？
+root.mainloop()
+
+# 演習
+root = tk.Tk()
+root.title("平方根")
+root.geometry("300x140")
+moto_label = tk.Label(text = "平方根を求める数")
+moto_label.pack()
+moto_entry = tk.Entry(justify="right")
+moto_entry.pack()
+sqrt_label = tk.Label(text= "平方根計算結果")
+sqrt_label.pack()
+sqrt_result = tk.StringVar()
+sqrt_label = tk.Label(text = "", textvariable = sqrt_result)
+sqrt_label.pack()
+
+import math
+def calc_sqrt():
+    """sqrt計算"""
+    moto = int(moto_entry.get())
+    sqrt = math.sqrt(moto)
+
+    global sqrt_result
+    sqrt_result.set(str(sqrt))
+button = tk.Button(text = "計算", command = calc_sqrt)
+button.pack()
+root.mainloop()
+
+# タートルグラフィックス
+# turtleとはプログラミング学習用のグラフィックライブラリ
+
+import turtle
+
+t = turtle.Turtle()
+t.right(90)
+t.forward(100)
+t.left(90)
+t.backward(100)
+
+turtle.done()
